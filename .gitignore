@@ -1,3 +1,24 @@
+# ============================================================
+# Terraform
+# ============================================================
+
+# Diretório criado pelo Terraform
+.terraform/
+
+# Arquivos de estado
 *.tfstate
-*.tfstate.backup
-.terraform
+*.tfstate.*
+
+# Arquivos de crash
+crash.log
+crash.*.log
+
+# Arquivos de configuração local
+.terraformrc
+terraform.rc
+
+# Arquivos de override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
