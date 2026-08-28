@@ -1,20 +1,17 @@
-# arquivo principal de configurações terraform para provisionar recursos na AWS
+# Arquivo principal de configurações terraform para provisionar recursos na AWS
 
-# Sintaxe padrão
 
-# bloco "tipo" "nome" {
-#   argumento = valor
-# }
-
+# Configura o provedor que o terraforme vai usar para criar e gerenciar recursos
 provider "aws" {
-  region = "us-east-1"
+
+  #Define a região onde os recursos serão criados
+  region = var.region
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
+# Declara o recurso que o terraform irá criar ou gerenciar
+# resource "tipo_do_recurso" "nome_local"
+resource "aws_s3_bucket" "aws_object_storage" {
 
-  tags = {
-    Name = "ExampleInstance"
-  }
+  # Define o nome do bucket s3 que será criado na aws
+  bucket = "armazenamento-de-objetos-da-aws"
 }
